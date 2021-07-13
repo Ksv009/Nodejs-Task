@@ -65,7 +65,7 @@ exports.signup = (req, res, next) => {
             const token  =valids.generateJwt(email);
             data.accessToken = token;
             console.log(token);
-            data.save();
+            //data.save();
             res.json({
               token: token,
               message: 'Login successfully'
@@ -98,7 +98,15 @@ exports.signup = (req, res, next) => {
   
 
 exports.tokencheck = (req,res) =>{
-  res.json({
-    msg:'Token valid'
-  });
+  if(data.accessToken == null){
+    res.json({
+      msg:'Token Expired'
+    });
+  }
+  else{
+    res.json({
+      msg:'Token valid'
+    });
+  }
+  
 }
