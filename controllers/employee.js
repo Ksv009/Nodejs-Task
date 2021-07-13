@@ -98,10 +98,7 @@ exports.signup = (req, res, next) => {
   
 
 exports.tokencheck = (req,res) =>{
-  if(data.accessToken == null){
-    res.json({
-      msg:'Token valid'
-    });
-  }
-  
+  res.json({
+    msg:'Token valid'
+  });
 }
