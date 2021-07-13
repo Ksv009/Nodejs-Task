@@ -27,7 +27,7 @@ let randomstr = () => {
 
 const generateJwt = (email) => {
       const payload = { email: email};
-      const token =  jwt.sign(payload, 'Gemini', {expiresIn:'300'});
+      const token =  jwt.sign(payload, 'Gemini', {expiresIn:'120000'}); // 2 minutes in millisesconds
       return token;
   }
   
